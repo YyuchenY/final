@@ -1,0 +1,16 @@
+extends layout
+block content
+	.wrap
+		#login
+			form(method='post' action='login_finish')#login-form
+				h1=title
+				p=account
+					input(type='text' name='account')#account
+				p=password
+					input(type='password' name='password')#password
+				#confirm.confirm
+						input(type='reset' name='reset' value='重填')#reset
+						input(type='button' name='submit' value='登入' onclick='return user_login();')#submit
+block scripts
+	script(src='/javascripts/login.js')
+

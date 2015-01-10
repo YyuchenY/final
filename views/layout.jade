@@ -1,0 +1,13 @@
+html
+	head
+		meta(charset="UTF-8")
+		title= title
+		link(rel="stylesheet" href="/stylesheets/index.css")
+		#{css}
+		script(src='/javascripts/jquery-1.11.1.js')
+		script(src='/javascripts/all.js')
+		#{js}
+		
+	body
+		block content
+		block scripts

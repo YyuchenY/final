@@ -1,0 +1,46 @@
+.buildingframe{
+	position:relative;
+	margin:0 auto 0 auto;
+	top:100px;
+	width:74%;
+	height:550px;
+	background-color: #000;
+
+}
+.buildingtop{
+	position:relative;
+	top:10%;
+	margin:0 auto 0 auto;
+	background-color: #fff;
+	height:100px; 
+	width:100px;
+}
+.buildingleft{
+	position:absolute;
+	top:70%;
+	left:15%;
+	background-color: #fed116;
+	height:100px; 
+	width:100px;
+}
+.buildingright{
+	position:absolute;
+	top:70%;
+	right:15%;
+	background-color: red;
+	height:100px; 
+	width:100px;
+}
+.people{
+	position:absolute;
+	top:60%;
+	left:48%;
+}
+
+.people>img{
+	display:block;
+	margin:0 auto 0 auto;
+	width:50px;
+	height:50px;
+
+}

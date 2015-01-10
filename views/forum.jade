@@ -1,0 +1,40 @@
+﻿extends layout
+
+block content
+	.fixbar
+		.innerbar
+			h1 
+				a(href='/')
+					img(src="/images/logo-xmas.png")
+			-if(con==0)
+				ul.login
+					li
+						a(href='/login') 登入
+					li
+						a(href='/register') 註冊
+					li
+						a(href='/forum') 討論區
+			-else if(con==1)
+				ul.login#login
+					li
+						a(href='/logout') 登出
+					li 	
+						a(href='/personal')= nickname
+					li
+						a(href="/forum") 討論區
+			//#clear	
+	.buildingframe#buildingframe
+		.buildingtop#buildingtop
+			span 1213
+		.buildingleft#buildingleft
+			span 1213
+		.buildingright#buildingright
+			span 1213
+		.people
+			img(src='/images/knight.jpg')
+	.footer
+		.innerfooter
+			span.footertext Copyright © 2014	Forgotten Empires LLC All Rights Reserved.
+
+	
+		

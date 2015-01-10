@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	.fixbar
+		.innerbar
+			h1 
+				a(href='/')
+					img(src="/images/logo-xmas.png")
+			//-var user_id = user_id
+				p= user_id
+			-if(con==0)
+				ul.login
+					li
+						a(href='/login')= login
+					li
+						a(href='/register')= register
+					li
+						a(href='/forum') 討論區
+			-else if(con==1)
+				ul.login
+					li
+						a(href='/logout') 登出
+					li 	
+						a(href='/personal')= nickname
+					li
+						a(href='/forum') 討論區
+			.clear		
+	.box
+		ul.center#center
+			li.firstdpage
+				img(src='/images/AOFE_Header.jpg')
+			li.secondpage
+				img(src='/images/AOFE_newmission.png')
+			li.thirdpage
+				img(src='/images/AOFE_newcivilization.png')
+			li.forthpage
+			li.fifthpage
+		ul.buttonbox
+			li
+				button#leftbutton left
+			li
+				button#rightbutton right
+	.footer
+		.innerfooter
+			span.footertext Copyright © 2014	Forgotten Empires LLC All Rights Reserved.		
+
+block scripts
+	script
+		include ../public/javascripts/index_inc.js

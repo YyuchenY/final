@@ -1,0 +1,29 @@
+
+extends layout
+
+block content
+	.wrap
+		//input(type='hidden' value=user._id)#userId
+		#register 
+			form(method="post" action="/register_finish")#register-form 
+				h1=title
+				p=nickname 
+					input(type='text' name='nickname' )#nickname
+				p=account  
+					input(type='text' name='account' )#account
+				p=password 
+					input(type='password' name='password' )#password
+				p=email   
+					input(type='email' name='email' )#email
+				#confirm.confirm
+					input(type='reset' name='reset' value='清除')
+					input(type='button' name='submit' value='送出'  onclick='return user_register();')
+			
+
+block scripts
+	script(src='/javascripts/jquery.min.js')
+	script(src='/javascripts/register.js')
+	
+	
+
+	

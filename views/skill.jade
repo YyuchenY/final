@@ -1,0 +1,49 @@
+extends layout
+block content
+	.fixbar
+		.innerbar
+			h1 
+				a(href='/')
+					img(src="/images/logo-xmas.png")
+			//-var user_id = user_id
+				p= user_id
+			-if(con==0)
+				ul.login
+					li
+						a(href='/login')= login
+					li
+						a(href='/register')= register
+					li
+						a(href='/forum') 討論區
+			-else if(con==1)
+				ul.login
+					li
+						a(href='/logout') 登出
+					li 	
+						a(href='/personal')= nickname
+					li
+						a(href='/forum') 討論區
+			.clear
+	.form
+		ul(style='cursor:default;')
+			li.number 編號
+			li.comment 留言
+			li.subject 主題
+			li.author 作者
+			li.data 日期
+		ul(onclick="$('#forum_content').show();")
+			li.number 1
+			li.comment 23
+			li.subject 你是誰
+			li.author Apple
+			li.data 2015/1/6
+		ul(onclick='CollapseExpand("forum_content")')
+			li.number 2
+			li.comment 23
+			li.subject 你是誰很長很長
+			li.author Wei
+			li.data 2015/1/6
+		.content_hidden#forum_content
+	.footer
+		.innerfooter
+			span.footertext Copyright © 2014	Forgotten Empires LLC All Rights Reserved.
