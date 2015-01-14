@@ -1,0 +1,22 @@
+.hidden#login_box
+	form(method='post' action='login_finish')#login-form
+		ul
+			li 帳號
+				input(type='text' name='account')#account
+			li 密碼
+				input(type='password' name='password')#password
+			input( type="button" onclick="login('login_box')" value='取消')#reset.blue_button
+			input( type="button" onclick="return user_login();" value='登入')#submit.blue_button
+.hidden#register_box
+	form(method='post' action='/register_finish')#register-form
+		ul
+			li 暱稱
+				input(type='text' name='nickname' )#nickname
+			li 帳號
+				input(type='text' name='account' )#Account
+			li 密碼
+				input(type='password' name='password' )#Password
+			li 信箱
+				input(type='email' name='email' )#email
+			input( type="button" onclick="login('register_box')" value='取消')#reset.blue_button
+			input( type="button" onclick="return user_register();" value='註冊')#submit.blue_button

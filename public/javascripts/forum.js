@@ -3,13 +3,13 @@ var animateSpeed = 300;
 
 $(document).ready(function($) {
   $('#buildingtop').click( function( event ) {
-    setTimeout(window.location="/skill",800);
+    setTimeout("location.href='/forum_skill'",800);
   });
   $('#buildingleft').click( function( event ) {
-    setTimeout(location.href='/forum_play',800);
+    setTimeout("location.href='/forum_play'",800);
   });
   $('#buildingright').click( function( event ) {
-    setTimeout(location.href='/forum_problem',800);
+    setTimeout("location.href='/forum_problem'",800);
   });
 
 

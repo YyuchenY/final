@@ -1,0 +1,8 @@
+#login{
+	width: 50%;
+	margin: 0 auto;
+	background-image:url('../images/login_bg.png') ; 
+	background-size: 100%;
+	position: relative;
+	top:120px;
+}

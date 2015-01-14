@@ -48,7 +48,7 @@ table {
 }
 
 body{
-	background-image: url("../images/AOFE_ground.jpg");
+	background-image: url("../images/bg.png");
 	*background-size: 100% 100%;
 	 background-repeat: repeat; 
 	font-family: "Verdana";
@@ -58,7 +58,7 @@ body{
 .fixbar{
 	height:50px;
 	width:100%;
-	background-color:#006666;
+	background-image: url('../images/bar.png') ;
 	padding-top:0.1px;
 	position:fixed;
 }
@@ -96,13 +96,13 @@ h1{
 	float:left;
 	*width:100px;
 	*height:50px;
-	margin-top: 6px;
+	*margin-top: 6px;
 	margin-bottom: 10px;
 }
 
 h1>a>img{
-	width: auto;
-	height: 32px;
+	height: 60px;
+	width: 100px;
 
 }
 
@@ -114,12 +114,21 @@ h1>a>img{
 	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
 	font-weight: 400;
 	line-height: 1.428571429;
+	cursor:pointer;
 }
 
 .login li a{
 	color:#fff;
 	text-decoration: none;
 
+}
+
+.login li:hover{
+	color:#33CCFF;
+}
+
+.login li a:hover{
+	color:#33CCFF;
 }
 
 
@@ -132,7 +141,7 @@ h1>a>img{
 	position: relative;
 	width:74%;
 	height:550px;
-	top:100px;
+	top:120px;
 	margin:0 auto 0 auto;
 	overflow: hidden;
 }
@@ -159,60 +168,92 @@ h1>a>img{
 
 .firstdpage{
 
-	background-color: #000;
+	*background-color: #000;
 
+}
+#more_info{
+	width: 216px;
+	height: 119px;
+	position: absolute;
+	top: 80%;
+	left: 85%;
+	cursor: pointer;
 }
 
 .secondpage{
 
-	background-color: #666;
+	*background-color: #666;
 }
-.thirdpage{
-
-	background-color: red;
+.secondpage>div>a{
+	width: 180px;
+	height: 58px;
+	position: absolute;
+	top: 90%;
+	left: 88%;
+	
+}
+.thirdpage>div>a{
+	width: 232px;
+	height: 58px;
+	position: absolute;
+	top: 90%;
+	left: 84%;
 
 }
 
-.forthpage{
-
-	background-color: blue;
+.forthpage>div>a{
+	width: 232px;
+	height: 58px;
+	position: absolute;
+	top: 90%;
+	left: 84%;
 }
 
 .fifthpage{
 
-	background-color: green;
+	*background-color: green;
 }
 
 .changepage{
 	left:-100%;
 	*display:none;
 }
-
 .buttonbox{
-	position: relative;
-	width:100px;
-	margin: 0 auto 0 auto;
+	position: absolute;
+	width:100%;
+	bottom:80px;
 }
 
 .buttonbox>li{
 	position: relative;
 	display:inline;
 	z-index:1000;
-	bottom:100px;
+	bottom:150px;
+	
 }
-
+.buttonbox>li>button>img{
+	width: 70%;
+}
 .leftbutton{
-
+	float:left;
 }
+
+
 
 .rightbutton{
+	float:right;
+}
+
+.rightbutton>button>img{
+	transform:rotate(180deg);
 
 }
 
 .footer{
 	height:50px;
 	width:100%;
-	background-color:#006666;
+	*background-color:#006666;
+	background-image: url('../images/footer.png');
 	padding-top:0.1px;
 	position:fixed;
 	bottom:0px;
@@ -249,11 +290,110 @@ h1>a>img{
 
 .footertext{
 	display: block;
-	width: 450px;
+	width: 390px;
 	margin:15px auto 0 auto;
 	color:#fff;
-	font-size:14px;
+	font-size:16px;
 	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
 	font-weight: 400;
 	line-height: 1.428571429;
+}
+
+.login_box{
+	position:fixed;
+	background-color: #DCDCDC;
+	right:25px;
+	top:70px;
+	padding:10px;
+	border-top-left-radius:15px;
+	width:400px;
+	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
+	
+}
+
+.login_box>form>ul{
+	width:60%;
+	margin: 0 auto 0 auto;
+}
+
+.login_box>form>ul>li{
+	margin:10px;
+}
+
+.login_box>form>ul>li>input{
+	margin-left:10px;
+}
+
+.register_box{
+	position:fixed;
+	background-color: #DCDCDC;
+	right:25px;
+	top:70px;
+	padding:10px;
+	border-top-left-radius:15px;
+	width:400px;
+	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
+	box-shadow:4px 4px 12px 2px rgba(20%,20%,40%,0.5);
+}
+
+.register_box>form>ul{
+	width:60%;
+	margin: 0 auto 0 auto;
+}
+
+.register_box>form>ul>li{
+	margin:10px;
+}
+
+.register_box>form>ul>li>input{
+	margin-left:10px;
+}
+
+.blue_button {
+	background-color:#428bca;
+	border-radius:6px;
+	text-indent:0;
+	border:1px solid #357ebd;
+	display:inline-block;
+	color:#fff;
+	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	margin-left: 5px;
+}
+
+.blue_button:hover {
+	background-color:#0066CC;
+}
+
+.blue_button:active {
+	position:relative;
+	top:1px;
+}
+
+.hidden{
+	display:none;
+}
+
+button{
+	border:none;
+	background:none;
+}
+
+
+#ip{
+	position:absolute;
+	bottom:75px;
+	left:42%;
+	font-family:Roboto,"黑體-繁","Heiti TC","蘋果儷中黑","Apple LiGothic Medium","微軟正黑體","Microsoft JhengHei",sans-serif ; 
+	font-size:25px;
+	font-weight:bold;
+	font-style:normal;
+	color:#880000;
 }

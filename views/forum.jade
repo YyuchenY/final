@@ -5,13 +5,11 @@ block content
 		.innerbar
 			h1 
 				a(href='/')
-					img(src="/images/logo-xmas.png")
+					img(src="/images/logo.png")
 			-if(con==0)
 				ul.login
-					li
-						a(href='/login') 登入
-					li
-						a(href='/register') 註冊
+					li(onclick="login('login_box')") 登入
+					li(onclick="login('register_box')") 註冊
 					li
 						a(href='/forum') 討論區
 			-else if(con==1)
@@ -19,22 +17,26 @@ block content
 					li
 						a(href='/logout') 登出
 					li 	
-						a(href='/personal')= nickname
+						a(href='/')= nickname
 					li
 						a(href="/forum") 討論區
-			//#clear	
+			.clear
 	.buildingframe#buildingframe
 		.buildingtop#buildingtop
-			span 1213
+			img(src='/images/forum_skill.png')
+			span 技術討論區
 		.buildingleft#buildingleft
-			span 1213
+			span 揪團區
+			img(src='/images/forum_play.png')
 		.buildingright#buildingright
-			span 1213
+			span 疑難雜症區
+			img(src='/images/forum_problem.png')
 		.people
-			img(src='/images/knight.jpg')
+			img(src='/images/forum_people.png')
 	.footer
 		.innerfooter
-			span.footertext Copyright © 2014	Forgotten Empires LLC All Rights Reserved.
-
-	
-		
+			span.footertext 高雄大學資管系 	Web前端課程  期末專題    僅供教育用途
+		include login_register
+block scripts
+	script(src='/javascripts/login.js')
+	script(src='/javascripts/register.js')

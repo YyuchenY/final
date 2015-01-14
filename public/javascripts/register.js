@@ -1,12 +1,13 @@
 function user_register(){
 	var nickname=$("#nickname").val() ;
-	var account=$("#account").val();
-	var password=$("#password").val() ;
+	var account=$("#Account").val();
+	console.log(account);
+	var password=$("#Password").val() ;
 	//var password2=$("#password2").val() ;
 	var email=$("#email").val();
 	var url = $('#register-form').attr("action");
 	var data=$('#register-form').serialize();
-	
+	//alert(account);
 	if(nickname==''){
 		alert("請輸入暱稱");
 		
@@ -52,10 +53,16 @@ function user_register(){
 	if(email=''){
 		alert('請輸入E-mail');
 		$("#email").focus();
+		return false;
 	}else if(!(checkLength( password, 6, 50 ))){
 		alert('E-mail過長請重新輸入');
 		$("#email").focus();
-	}
+		return false;
+	}/*else if(!checkRegexp(email,/^\S+@\S+\..{2,3}$/)){
+		alert('請輸入正確E-mail地址');
+		$("#email").focus();
+		return false;
+	}*/
 	$.ajax({
 		url:url,
 		data:data,
@@ -68,11 +75,11 @@ function user_register(){
 			if(msg =="success"){
 				
 				alert("註冊成功");
-				window.location = '/login';
+				window.location = '/';
 			}else
 			{	
 				alert("此帳號有人使用囉!!");
-				window.location = '/register';
+				window.location = '/';
 			
 			}
 		},

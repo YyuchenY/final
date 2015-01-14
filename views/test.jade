@@ -1,0 +1,11 @@
+extends layout
+block content
+	body
+		form(method='post' action='test')
+			input(type='text' name='TopicName' value='' placeholder="NAME")
+			input(type='text' name='Content' value='' placeholder="Content")
+			input(type='submit' value='Submit')
+		a(href="/X") Message
+
+block scripts
+	script(type="text/javascript" language="javascript" src='/javascripts/test.js' charset='utf-8')

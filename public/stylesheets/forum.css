@@ -4,32 +4,43 @@
 	top:100px;
 	width:74%;
 	height:550px;
-	background-color: #000;
+	background-image: url('../images/forum_index.png');
+}
+.buildingframe img{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.buildingframe span{
+	font-size: 20px;
+	font-family: 微軟正黑體;
+	margin-left: 10%;
+	color: #FFF;
 
 }
 .buildingtop{
 	position:relative;
 	top:10%;
 	margin:0 auto 0 auto;
-	background-color: #fff;
+	*background-image: url('../images/forum_skill.png');
 	height:100px; 
-	width:100px;
+	width:150px;
 }
 .buildingleft{
 	position:absolute;
 	top:70%;
 	left:15%;
-	background-color: #fed116;
+	*background-image: url('../images/forum_problem.png');
 	height:100px; 
-	width:100px;
+	width:150px;
 }
 .buildingright{
 	position:absolute;
 	top:70%;
 	right:15%;
-	background-color: red;
+	*background-image: url('../images/forum_play.png');
 	height:100px; 
-	width:100px;
+	width:150px;
 }
 .people{
 	position:absolute;
@@ -40,7 +51,7 @@
 .people>img{
 	display:block;
 	margin:0 auto 0 auto;
-	width:50px;
-	height:50px;
+	width:52px;
+	height:100px;
 
 }

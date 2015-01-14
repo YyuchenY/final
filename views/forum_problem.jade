@@ -45,14 +45,14 @@ block content
 			-var date=String(date).substring(0,24);
 			-var data=[m.Content,m.TopicName,m.TopicAuthor,date,m._id];
 			-var reply2=new Array();
+			-var date2;
 			-for x in reply
 				-if(oid==x.TopicID)
 					-var date2=x.Time;//回文時間
-					-date2=String(date2).substring(0,24);
+					-var date2=String(date2).substring(0,24);
 					-reply2=reply2+[,x.Content,x.ReplyAuthor,date2];
 			ul(onclick="CollapseExpand('forum_frame','#{data}','#{reply2}')")
 				li(class='number')= i
-					//input(type='hidden' id='number_#{i}' value='#{m.TopicID}')
 				li.comment=m.TopicName
 				li.title=m.Content
 				li.author=m.TopicAuthor
@@ -79,25 +79,26 @@ block content
 			.hidden#reply_box
 				h3 回應
 					div
-						form(name="Play_Reply" method="POST" action='/forum_play_reply')
-							textarea(name='Play_Reply_Content' placeholder="請輸入回應文字" rows="7" cols="70")
+						form(name="Problem_Reply" method="POST" action='/forum_problem_reply')
+							textarea(name='Problem_Reply_Content' placeholder="請輸入回應文字" rows="7" cols="70")
 							input(type='hidden' name='TopicID' value='')#Reply_TopicID
-				.box_button
-					button(onclick="Play_Reply_submitform()") 送出
-					button(onclick="startReply('reply_box')") 取消
+					.box_button
+						button(onclick="Problem_Reply_submitform()" ) 送出
+						button(onclick="startReply('reply_box')") 取消
 	.hidden#topic_box
 		h3 發表新主題
 		div
-			form(name="Play_Form" method="POST" action='')
+			form(name="Problem_Form" method="POST" action='')
 				div 標題：
-					input(name="Play_Title" type='text')
-				textarea(name='Play_Topic_Content' placeholder="請輸入發表文字" rows="20" cols="100")
+					input(name="Problem_Title" type='text' )
+				textarea(name='Problem_Topic_Content' placeholder="請輸入發表文字" rows="20" cols="100")
 		.box_button
-			button(onclick="Play_submitform()" ) 發表
+			button(onclick="Problem_submitform()" ) 發表
 			button(onclick="startTopic('topic_box')") 取消
 	include login_register
 block scripts
 	script(type="text/javascript" language="javascript" src='/javascripts/submit.js' charset='utf-8')
 	script(src='/javascripts/login.js')
 	script(src='/javascripts/register.js')
+
 	

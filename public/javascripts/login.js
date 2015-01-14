@@ -35,7 +35,7 @@ function user_login(){
 
 			}else{
 				alert("沒有此用戶或密碼不正確");
-				window.location = '/login';
+				window.location = '/';
 			} 
 		},
 		error:function(xhr, ajaxOptions, thrownError){ 

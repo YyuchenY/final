@@ -5,45 +5,84 @@ block content
 		.innerbar
 			h1 
 				a(href='/')
-					img(src="/images/logo-xmas.png")
+					img(src="/images/logo.png")
 			//-var user_id = user_id
 				p= user_id
 			-if(con==0)
 				ul.login
-					li
-						a(href='/login')= login
-					li
-						a(href='/register')= register
+					li(onclick="login('login_box')") 登入
+					li(onclick="login('register_box')") 註冊
 					li
 						a(href='/forum') 討論區
+					li
+						a(href='#')= okok
 			-else if(con==1)
 				ul.login
 					li
 						a(href='/logout') 登出
 					li 	
-						a(href='/personal')= nickname
+						a(href='/')= nickname
 					li
 						a(href='/forum') 討論區
 			.clear		
 	.box
 		ul.center#center
 			li.firstdpage
-				img(src='/images/AOFE_Header.jpg')
+				img(src='/images/index_1.gif')
+				div#more_info
 			li.secondpage
-				img(src='/images/AOFE_newmission.png')
+				img(src='/images/index_2_2.png')
+				div
+					a(href='/forum_play')
 			li.thirdpage
-				img(src='/images/AOFE_newcivilization.png')
+				img(src='/images/index_3.png')
+				div
+					a(href='/forum_skill')
 			li.forthpage
+				img(src='/images/index_4.png')
+				div
+					a(href='/forum__problem')
 			li.fifthpage
+				img(src='/images/index_5.png')
+			li.sixthpage
 		ul.buttonbox
-			li
-				button#leftbutton left
-			li
-				button#rightbutton right
+			li.leftbutton
+				button#leftbutton 
+					img(src='/images/arrow_icon.png')
+			li.rightbutton
+				button#rightbutton 
+					img(src='/images/arrow_icon.png')
 	.footer
 		.innerfooter
-			span.footertext Copyright © 2014	Forgotten Empires LLC All Rights Reserved.		
-
+			span.footertext 高雄大學資管系 	Web前端課程  期末專題    僅供教育用途	
+		.hidden#login_box
+			form(method='post' action='login_finish')#login-form
+				ul
+					li 帳號
+						input(type='text' name='account')#account
+					li 密碼
+						input(type='password' name='password')#password
+					input( type="button" onclick="login('login_box')" value='取消')#reset.blue_button
+					input( type="button" onclick="return user_login();" value='登入')#submit.blue_button
+		.hidden#register_box
+			form(method='post' action='/register_finish')#register-form
+				ul
+					li 暱稱
+						input(type='text' name='nickname' )#nickname
+					li 帳號
+						input(type='text' name='account' )#Account
+					li 密碼
+						input(type='password' name='password' )#Password
+					li 信箱
+						input(type='email' name='email' )#email
+					input( type="button" onclick="login('register_box')" value='取消')#reset.blue_button
+					input( type="button" onclick="return user_register();" value='註冊')#submit.blue_button
+	#ip
+		h2 您的IP為
+			= okok
+		p 使用本板請潔身自愛		
 block scripts
 	script
 		include ../public/javascripts/index_inc.js
+	script(src='/javascripts/login.js')
+	script(src='/javascripts/register.js')

@@ -1,6 +1,19 @@
 extends layout
 block content
 	.wrap
+		.fixbar
+			.innerbar
+				h1 
+					a(href='/')
+						img(src="/images/logo.png")
+				
+				ul.login
+					li
+						a(href='/login') 登入
+					li
+						a(href='/register') 註冊
+					li
+						a(href='/forum') 討論區
 		#login
 			form(method='post' action='login_finish')#login-form
 				h1=title
